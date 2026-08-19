@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-labelledby="title desc">
+  <title id="title">Sprout for Change mark</title>
+  <desc id="desc">A hand-drawn green seedling on a pale blue circle.</desc>
+  <circle cx="44" cy="44" r="39" fill="#cfe8f3"/>
+  <g fill="none" stroke="#2e6b46" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 68c0-15 .1-27 .5-39" stroke-width="3.2"/>
+    <path d="M43.8 38C37 26.5 27 22 18.5 24.6c2.3 9.2 11 16.2 25.3 13.4Z" stroke-width="2.6"/>
+    <path d="M44.5 34.5c6.7-10.3 15.8-13.4 24.1-10.2-2.7 8.6-10.9 14.4-24.1 10.2Z" stroke-width="2.6"/>
+    <path d="M19 69.2c10.4-3.4 18.7-3.9 25-1.6 7.1-2.3 15.7-1.7 25 2" stroke-width="2.6"/>
+  </g>
+  <path d="M12 13.5c10.2-6 22-8 34.5-7.2" fill="none" stroke="#f6c94b" stroke-linecap="round" stroke-width="2" opacity=".9"/>
+</svg>
