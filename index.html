@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f5f2e8">
   <meta name="description" content="Sprout for Change is a student-led Hong Kong sustainability organisation helping young people turn awareness into practical action.">
   <title>Sprout for Change — Student-led sustainability in Hong Kong</title>
-  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="icon" href="assets/favicon.png?v=2" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -14,10 +14,7 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner container-wide">
-      <a class="brand" href="index.html" aria-label="Sprout for Change home">
-        <img src="assets/logo-v0.webp" alt="" width="54" height="54">
-        <span>Sprout<br>for Change</span>
-      </a>
+      <a class="brand brand-mark" href="index.html" aria-label="Sprout for Change home"><img src="assets/logo-v0.webp" alt="" width="48" height="48"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span></button>
       <nav class="site-nav" id="site-menu" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
@@ -44,8 +41,40 @@
             <a class="text-link" href="about.html">Learn about S4C <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <figure class="hero-media hero-media--banner" data-reveal>
-          <img src="assets/s4c-banner-v0.webp" alt="Sprout for Change banner with a watercolor green background and the words Sprout 4 Change" width="2000" height="500" fetchpriority="high">
+        <figure class="hero-media hero-media--logo" data-reveal>
+          <img src="assets/logo-v0.webp" alt="Sprout for Change illustrated sprout and stars logo" width="700" height="700" fetchpriority="high">
+          <svg class="logo-sprout" viewBox="0 0 700 700" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="logo-sprout-fill" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#8fcf2e" />
+                <stop offset=".55" stop-color="#c8e63b" />
+                <stop offset="1" stop-color="#98d52f" />
+              </linearGradient>
+            </defs>
+            <path class="logo-sprout-line-outline logo-sprout-line--main" pathLength="1" d="M360 386c-8-53 8-92 37-120 26-25 42-48 57-68 22-30 36-55 46-80 12-23 21-41 26-57 9-20 18-51 21-74 9-48 17-90 29-129 8-25 18-49 29-72" />
+            <path class="logo-sprout-line logo-sprout-line--main" pathLength="1" d="M360 386c-8-53 8-92 37-120 26-25 42-48 57-68 22-30 36-55 46-80 12-23 21-41 26-57 9-20 18-51 21-74 9-48 17-90 29-129 8-25 18-49 29-72" />
+            <path class="logo-sprout-line-outline logo-sprout-line--low" pathLength="1" d="M397 266c-32 15-64 26-97 28-16 5-34 13-50 20-26 8-50 18-73 27" />
+            <path class="logo-sprout-line logo-sprout-line--low" pathLength="1" d="M397 266c-32 15-64 26-97 28-16 5-34 13-50 20-26 8-50 18-73 27" />
+            <path class="logo-sprout-line-outline logo-sprout-line--left-fork" pathLength="1" d="M300 294c-27-21-53-35-80-41" />
+            <path class="logo-sprout-line logo-sprout-line--left-fork" pathLength="1" d="M300 294c-27-21-53-35-80-41" />
+            <path class="logo-sprout-line-outline logo-sprout-line--far-left" pathLength="1" d="M250 314c-33-16-70-34-108-48-17-8-34-15-50-21" />
+            <path class="logo-sprout-line logo-sprout-line--far-left" pathLength="1" d="M250 314c-33-16-70-34-108-48-17-8-34-15-50-21" />
+            <path class="logo-sprout-line-outline logo-sprout-line--middle" pathLength="1" d="M454 198c30 16 62 14 94-11 22-17 41-34 57-50" />
+            <path class="logo-sprout-line logo-sprout-line--middle" pathLength="1" d="M454 198c30 16 62 14 94-11 22-17 41-34 57-50" />
+            <path class="logo-sprout-line-outline logo-sprout-line--right-fork" pathLength="1" d="M548 187c27 11 50 26 72 45" />
+            <path class="logo-sprout-line logo-sprout-line--right-fork" pathLength="1" d="M548 187c27 11 50 26 72 45" />
+            <path class="logo-sprout-line-outline logo-sprout-line--upper" pathLength="1" d="M500 118c-27-23-56-43-91-60" />
+            <path class="logo-sprout-line logo-sprout-line--upper" pathLength="1" d="M500 118c-27-23-56-43-91-60" />
+            <path class="logo-sprout-line-outline logo-sprout-line--upper-fork" pathLength="1" d="M526 61c27-14 57-25 89-31" />
+            <path class="logo-sprout-line logo-sprout-line--upper-fork" pathLength="1" d="M526 61c27-14 57-25 89-31" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--low-tip" d="M177 341c-24-24-49-25-68-7 15 24 41 31 64 10 2-1 3-2 4-3Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--left-fork-tip" d="M220 253c-25-10-38-31-31-55 25 8 42 28 34 52-1 2-2 3-3 3Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--middle-tip" d="M605 137c3-27 22-45 49-43-1 27-19 47-45 49-2 0-3-2-4-6Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--right-fork-tip" d="M620 232c22-18 45-16 62 4-19 20-43 22-61 3-1-2-2-3-1-7Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--upper-tip" d="M409 58c-18-14-26-33-13-47 22 10 30 30 16 45-1 2-2 3-3 2Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--upper-fork-tip" d="M615 30c12-25 34-35 58-22-10 25-32 37-56 25-2-1-3-2-2-3Z" />
+            <path class="logo-sprout-leaf logo-sprout-leaf--far-left-tip" d="M92 245c-23-23-45-21-60-1 15 23 40 29 58 5 1-2 2-3 2-4Z" />
+          </svg>
         </figure>
       </div>
     </section>

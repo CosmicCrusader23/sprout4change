@@ -118,8 +118,9 @@ a {
   position: sticky;
   z-index: 100;
   top: 0;
+  height: 72px;
   border-bottom: 1px solid transparent;
-  background: var(--paper);
+  background: linear-gradient(105deg, #c4ec70 0%, #9fe5a1 52%, #72d9aa 100%);
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 
@@ -130,7 +131,8 @@ a {
 
 .header-inner {
   display: flex;
-  min-height: 96px;
+  height: 100%;
+  min-height: 0;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -155,6 +157,11 @@ a {
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.brand-mark img {
+  width: 48px;
+  height: 48px;
 }
 
 .site-nav {
@@ -260,7 +267,7 @@ a {
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 2px;
-  background: transparent;
+  background: rgb(255 253 248 / 82%);
   color: var(--ink);
   cursor: pointer;
 }
@@ -359,7 +366,7 @@ p {
 
 .hero {
   overflow: hidden;
-  padding: clamp(1.5rem, 2.5vw, 2.5rem) 0 clamp(1.25rem, 2vw, 2rem);
+  padding: 0 0 clamp(1.25rem, 2vw, 2rem);
 }
 
 .hero-grid {
@@ -432,6 +439,153 @@ p {
   min-height: 0;
   aspect-ratio: 4 / 1;
   object-fit: cover;
+}
+
+.hero-media--logo {
+  position: relative;
+  width: min(100%, 640px);
+  min-height: 0;
+  margin-right: 0;
+  justify-self: center;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  border-radius: 50%;
+  clip-path: none;
+  box-shadow: 0 22px 60px rgb(34 67 48 / 12%);
+  transition: transform 450ms cubic-bezier(.2,.8,.2,1), box-shadow 450ms ease;
+}
+
+.hero-media--logo img {
+  display: block;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-sprout {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 216ms ease;
+  pointer-events: none;
+}
+
+@keyframes logo-sprout-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes logo-sprout-leaf {
+  from { opacity: 0; transform: scale(.12) rotate(-12deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.logo-sprout-line,
+.logo-sprout-line-outline,
+.logo-sprout-leaf {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-sprout-line,
+.logo-sprout-line-outline {
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.logo-sprout-line-outline {
+  stroke: #4b9db6;
+  stroke-width: 7;
+}
+
+.logo-sprout-line {
+  stroke: #91c933;
+  stroke-width: 4;
+}
+
+.logo-sprout-line--low {
+  --sprout-delay: 384ms;
+}
+
+.logo-sprout-line--middle {
+  --sprout-delay: 648ms;
+}
+
+.logo-sprout-line--upper {
+  --sprout-delay: 840ms;
+}
+
+.logo-sprout-line--left-fork {
+  --sprout-delay: 1.2s;
+}
+
+.logo-sprout-line--right-fork {
+  --sprout-delay: 1.44s;
+}
+
+.logo-sprout-line--upper-fork {
+  --sprout-delay: 1.2s;
+}
+
+.logo-sprout-line--far-left {
+  --sprout-delay: 1.44s;
+}
+
+.logo-sprout-leaf {
+  fill: url(#logo-sprout-fill);
+  stroke: #4b9db6;
+  stroke-width: 7;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  --sprout-delay: 912ms;
+}
+
+.logo-sprout-leaf--low-tip { --sprout-delay: 1.2s; }
+.logo-sprout-leaf--left-fork-tip { --sprout-delay: 1.68s; }
+.logo-sprout-leaf--middle-tip { --sprout-delay: 1.44s; }
+.logo-sprout-leaf--right-fork-tip { --sprout-delay: 2.16s; }
+.logo-sprout-leaf--upper-tip { --sprout-delay: 1.56s; }
+.logo-sprout-leaf--upper-fork-tip { --sprout-delay: 1.8s; }
+.logo-sprout-leaf--far-left-tip { --sprout-delay: 2.16s; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hero-media--logo:hover,
+  .hero-media--logo:focus-within {
+    transform: scale(1.008);
+    box-shadow: 0 32px 70px rgb(34 67 48 / 18%);
+  }
+
+  .hero-media--logo:hover .logo-sprout,
+  .hero-media--logo:focus-within .logo-sprout {
+    opacity: 1;
+  }
+
+  .hero-media--logo:hover .logo-sprout-line,
+  .hero-media--logo:hover .logo-sprout-line-outline,
+  .hero-media--logo:focus-within .logo-sprout-line,
+  .hero-media--logo:focus-within .logo-sprout-line-outline {
+    animation-name: logo-sprout-draw;
+    animation-duration: 1.08s;
+    animation-timing-function: cubic-bezier(.2,.8,.25,1);
+    animation-delay: var(--sprout-delay, 0s);
+    animation-fill-mode: both;
+  }
+
+  .hero-media--logo:hover .logo-sprout-leaf,
+  .hero-media--logo:focus-within .logo-sprout-leaf {
+    animation-name: logo-sprout-leaf;
+    animation-duration: 576ms;
+    animation-timing-function: cubic-bezier(.2,.8,.25,1);
+    animation-delay: var(--sprout-delay, 912ms);
+    animation-fill-mode: both;
+  }
 }
 
 .photo-note {
@@ -1197,10 +1351,6 @@ p {
 }
 
 @media (max-width: 1080px) {
-  .header-inner {
-    min-height: 78px;
-  }
-
   .menu-toggle {
     display: block;
   }
@@ -1208,7 +1358,7 @@ p {
   .site-nav {
     position: fixed;
     z-index: 90;
-    top: 78px;
+    top: 72px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -1291,7 +1441,7 @@ p {
   }
 
   .hero {
-    padding-top: 2.5rem;
+    padding-top: 0;
   }
 
   .hero-grid,
@@ -1306,13 +1456,18 @@ p {
 
   .hero-media {
     min-height: 460px;
-    margin: 1rem calc(var(--gutter) * -1) 0;
+    margin: 0 calc(var(--gutter) * -1) 0;
     clip-path: none;
     grid-row: 1;
   }
 
   .hero-media img {
     min-height: 460px;
+  }
+
+  .hero-media--logo,
+  .hero-media--logo img {
+    min-height: 0;
   }
 
   .hero-media--banner,
@@ -1421,10 +1576,6 @@ p {
     --gutter: 1.15rem;
   }
 
-  .header-inner {
-    min-height: 72px;
-  }
-
   .brand {
     font-size: 1.05rem;
   }
@@ -1435,6 +1586,11 @@ p {
 
   .site-nav {
     top: 72px;
+  }
+
+  .brand-mark img {
+    width: 46px;
+    height: 46px;
   }
 
   .eyebrow {
@@ -1463,6 +1619,16 @@ p {
 
   .hero-media--banner,
   .hero-media--banner img {
+    min-height: 0;
+  }
+
+  .hero-media--logo {
+    width: min(78vw, 360px);
+    margin: 0 auto;
+  }
+
+  .hero-media--logo,
+  .hero-media--logo img {
     min-height: 0;
   }
 
