@@ -29,9 +29,10 @@ All links and assets use relative paths, so the site works at both a user-domain
 - Organisation details, contacts and the team roster come from the supplied S4C materials.
 - Future or example activities are labelled carefully so they are not presented as completed projects.
 - Lorem ipsum appears only in clearly marked, optional future-content areas.
-- The three documentary images in `assets/images/` are local, replaceable generated placeholders. Keep the filenames to swap in real S4C photography without changing the HTML.
+- The current logo and banner are the supplied S4C artwork in `assets/`.
 - The contact form is GitHub Pages-safe: it prepares a message in the visitor’s email app and does not collect or store data.
+- The supplied website brief PDF is the source for the latest team and project updates.
 
-## Design reference
+## Artwork
 
-The approved homepage implementation reference is stored in `design/concepts/` for future visual maintenance.
+The original supplied files are retained as optimized WebP assets: `assets/logo-v0.webp` and `assets/s4c-banner-v0.webp`.
